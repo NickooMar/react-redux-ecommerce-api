@@ -3,10 +3,12 @@ import { commerce } from "./lib/Commerce";
 import { Products, Navbar, Cart, Checkout } from "./Components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+require('dotenv').config()
+
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
-  const [order, setOrder] = useState({})
+  const [order, setOrder] = useState({})  
   const [errorMessage, setErrorMessage] = useState('')
 
   const fetchProducts = async () => {
@@ -67,7 +69,7 @@ function App() {
     fetchCart();
   }, []);
 
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <>
