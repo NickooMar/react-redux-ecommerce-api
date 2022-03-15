@@ -3,7 +3,6 @@ import { commerce } from "./lib/Commerce";
 import { Products, Navbar, Cart, Checkout } from "./Components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-require('dotenv').config()
 
 function App() {
   const [products, setProducts] = useState([]);
