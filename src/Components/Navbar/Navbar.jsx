@@ -27,7 +27,7 @@ const Navbar = ({ totalItems }) => {
             color="inherit"
           >
             <img src={Logo} alt="Commerce.js" height="25px" />
-            Commerce.Js
+            Nicoo Business
           </Typography>
           <div className={classes.grow} />
           {location.pathname === "/" && (

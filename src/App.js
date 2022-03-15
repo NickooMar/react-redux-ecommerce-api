@@ -18,23 +18,23 @@ function App() {
   };
 
   const fetchCart = async () => {
-    const cart = await commerce.cart.retrieve();
+    const cart = await commerce.cart.retrieve(); //Retrieve crea un cart
     setCart(cart);
   };
 
   const handleAddToCart = async (productId, quantity) => {
-    const { cart } = await commerce.cart.add(productId, quantity);
+    const { cart } = await commerce.cart.add(productId, quantity); //add agrega un producto y su cantidad
     setCart(cart);
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
-    const { cart } = await commerce.cart.update(productId, { quantity });
+    const { cart } = await commerce.cart.update(productId, { quantity }); //Actualiza la cantidad o producto
 
     setCart(cart);
   };
 
   const handleRemoveFromCart = async (productId) => {
-    const { cart } = await commerce.cart.remove(productId);
+    const { cart } = await commerce.cart.remove(productId); 
 
     setCart(cart);
   };
@@ -46,7 +46,7 @@ function App() {
   };
 
   const refreshCart = async () => {
-    const newCart = await commerce.cart.refresh()
+    const newCart = await commerce.cart.refresh() //Crea un nuevo cart y actualiza el cart Id guardado.
 
     setCart(newCart)
   }
@@ -88,7 +88,8 @@ function App() {
             />
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart}
+            <Checkout 
+              cart={cart}
               order={order}
               onCaptureCheckout={handleCaptureCheckout}
               error={errorMessage}
